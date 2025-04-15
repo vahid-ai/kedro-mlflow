@@ -1,0 +1,42 @@
+# mlflow:
+#   mlflow_tracking_uri: null # Use local filesystem backend by default
+#   experiments:
+#     name: "Default"
+#   ui:
+#     port: "5000"
+#     host: "127.0.0.1"
+#   hooks:
+#     node:
+#       # disable automatic logging for all nodes
+#       # we will enable it selectively later
+#       auto_log_model: false
+#       # Control automatic metric/param logging (adjust as needed)
+#       log_params: true
+#       log_metrics: true
+#       # Configure run parameters
+#       run:
+#         # Prefix for MLflow run names (can be customized)
+#         # name_prefix: "run-"
+#         # Set to true to automatically create a new run for each pipeline run
+#         nested: true 
+
+# mlflow_tracking_uri: null # Use local filesystem backend by default
+# experiments:
+#   name: "Default"
+# ui:
+#   port: "5000"
+#   host: "127.0.0.1"
+# hooks:
+#   node:
+#     # disable automatic logging for all nodes
+#     # we will enable it selectively later
+#     auto_log_model: false
+#     # Control automatic metric/param logging (adjust as needed)
+#     log_params: true
+#     log_metrics: true
+#     # Configure run parameters
+#     run:
+#       # Prefix for MLflow run names (can be customized)
+#       # name_prefix: "run-"
+#       # Set to true to automatically create a new run for each pipeline run
+#       nested: true 

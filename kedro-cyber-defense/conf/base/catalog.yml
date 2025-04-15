@@ -1,0 +1,34 @@
+# Example catalog:
+# companies:
+#   type: pandas.CSVDataSet
+#   filepath: data/01_raw/companies.csv
+
+raw_cic_ids_data:
+  type: kedro_cyber_defense.datasets.ibis.table_dataset.TableDataset # Use custom dataset
+  filepath: "s3://cse-cic-ids2018/Processed Traffic Data for ML Algorithms/*.csv" # Wildcard path
+  connection:
+    backend: duckdb # Specify backend for the dataset to use
+    # Add other duckdb connection args here if needed
+  load_args: # Arguments passed to duckdb.read_csv()
+    # func: read_csv_auto # Optional: specify function if not read_csv
+    header: true
+    auto_detect: true
+    filename: true # Include filename column
+  # save_args: ... # Not needed for loading
+  # Removed PartitionedDataset keys below
+  # path: ... 
+  # dataset: 
+  #   type: pandas.CSVDataSet
+  #   ...
+  # filename_suffix: ".csv" # Optional: Can add suffix if needed
+  # Removed ibis-specific config below
+  # file_format: csv
+  # credentials: aws_anon
+
+# Intermediate dataset for the Ray transformation output
+ray_dataset:
+  type: MemoryDataset
+  # For actual persistence, consider:
+  # type: kedro_datasets.parquet.ParquetDataset
+  # filepath: data/03_primary/ray_processed_data.parquet # Example path
+  # Or a custom Ray dataset implementation
