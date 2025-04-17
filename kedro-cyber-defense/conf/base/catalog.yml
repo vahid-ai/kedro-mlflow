@@ -25,6 +25,10 @@ raw_cic_ids_data:
   # file_format: csv
   # credentials: aws_anon
 
+raw_mock_data:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/01_raw/mock_data.parquet
+
 # Intermediate dataset for the Ray transformation output
 ray_dataset:
   type: MemoryDataset
